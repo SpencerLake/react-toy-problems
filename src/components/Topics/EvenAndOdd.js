@@ -40,7 +40,7 @@ export default class FilterObject extends Component {
                 onChange={(e) => {this.handleChange(e.target.value)}}/>
                 <button 
                 className="confirmationButton"
-                onClick={(e)=> {this.handleClick(this.state.userInput)}}>Submit here</button>
+                onClick={()=> {this.handleClick(this.state.userInput)}}>Submit here</button>
                 <span className="resultsBox">evens: {this.state.evenArray}</span>
                 <span className="resultsBox">odds: {this.state.oddArray}</span>
             </div>
