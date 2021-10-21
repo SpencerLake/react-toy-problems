@@ -1,11 +1,14 @@
-import { render } from 'react-dom';
 import React, { Component } from 'react';
-import TopicBrowser from './components/TopicBrowser/TopicBrowser.js';
+import TopicBrowser from './components/TopicBrowser/TopicBrowser';
 
 class App extends Component {
   render() {
-    render(TopicBrowser);
+    return(
+
+    <TopicBrowser />
+    
+    ) 
   }
-};
+}
 
 export default App;
