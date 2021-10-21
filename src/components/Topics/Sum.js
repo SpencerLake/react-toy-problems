@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 export default class Sum extends Component {
     render() {
-        return
+        return (
             <div>
                 <p>Sum</p>
             </div>
+        )
     };
 };

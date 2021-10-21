@@ -7,14 +7,15 @@ import Sum from '../Topics/Sum';
 
 export default class TopicBrowser extends Component {
     render() {
-        return 
-            (<div>
+        return (
+            <div>
                 <p>Hello World.</p>
                 < EvenAndOdd />
                 < FilterObject />
                 < FilterString />
                 < Palindrome />
                 < Sum />
-            </div>)
+            </div>
+        )
     };
 };
