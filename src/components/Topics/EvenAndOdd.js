@@ -1,50 +1,49 @@
 import React, { Component } from 'react'
 
-export default class EvenAndOdd extends Component {
-    constructor(props){
+export default class FilterObject extends Component {
+    constructor(props) {
         super(props)
         this.state = {
             evenArray: [],
             oddArray: [],
-            userInput: "",
+            userInput: ""
         }
     }
 
-    handleChange(input){
-        this.setState({ userInput: input })
-        console.log(input)
+    handleChange(change) {
+        this.setState({ userInput: change })
+        console.log(change)
     }
-    handleClick(userInput){
-        let array = userInput;
-        let evens = [];
-        let odds = [];
 
-        for(let i = 0; i < array.length; i++){
-            if(array[i] % 2 === 0){
-                evens.push(parseInt(array[i], 10));
-            } else{
-                odds.push(parseInt(array[i], 10));
+    handleClick(input) {
+        let array = input;
+        let even = [];
+        let odd = [];
+
+        for(let num = 0; num < array.length; num++){
+            if(array[num] % 2 == 0){
+                even.push(parseInt(array[num], 10))
+            } else {
+                odd.push(parseInt(array[num], 10))
             }
         }
-
-        this.setState({ evenArray: evens, oddArray: odds })
-        console.log(userInput)
+        this.setState({ evenArray: even, oddArray: odd })
+        console.log(even, odd)
     }
 
     render() {
         return (
             <div className="puzzleBox evenAndOddPB">
-                <h4> Even and Odds</h4>
-               <input 
-               type="number"
-               onChange={ (e) => this.handleChange(e.target.value) }
-               className="inputLine"/>
-               <button 
-               onClick={ () => {this.handleChange(this.state.userInput)} }
-               className="confirmationButton" >Click Here</button>
-               <span className="resultsBox">evens:</span>
-               <span className="resultsBox">odds:</span>
+                <h4>Evens and Odds</h4>
+                <input 
+                className="inputLine" 
+                onChange={(e) => {this.handleChange(e.target.value)}}/>
+                <button 
+                className="confirmationButton"
+                onClick={(e)=> {this.handleClick(this.state.userInput)}}>Submit here</button>
+                <span className="resultsBox">evens: {this.state.evenArray}</span>
+                <span className="resultsBox">odds: {this.state.oddArray}</span>
             </div>
         )
-    }
-}
+    };
+};
